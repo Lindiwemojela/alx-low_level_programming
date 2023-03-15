@@ -4,8 +4,8 @@
 
 /**
  * str_concat - Function concentrates two strings of any size
- * @s1: The first string to be concentrated
- * @s2: The second string to be concentrated
+ * @s1: The first string to concentrate
+ * @s2: The second string to concentrate
  *
  * Return: The two strings concentrated
  */
@@ -28,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 		j++;
 
 	l = i + j;
-	s = malloc((size(char) * l) + 1);
+	s = malloc((sizeof(char) * l) + 1);
 
 	if (s == NULL)
 		return (NULL);
