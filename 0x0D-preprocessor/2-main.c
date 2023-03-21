@@ -9,6 +9,8 @@
 int main(void)
 
 {
-	printf("%s\n",_FILE_);
+	char file = fileno;
+
+	printf("%c\n", file);
 	return (0);
 }
