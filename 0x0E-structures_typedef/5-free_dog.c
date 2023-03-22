@@ -1,17 +1,19 @@
-#include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
 
 /**
- * free_doh - function frees dogs
- * @d: struct dog to free
+ * main - Check the code
+ *
+ * Return: Always 0 (Success)
  */
 
-void free_dog(dog_t *d)
+int main(void)
 {
-	if (d)
-	{
-		free(d->name);
-		free(d->owner);
-		free(d);
-	}
+	dog_t *my_dog;
+
+	my_dog = new_dog("Poppy", 3.5, "Bob");
+	printf("My name is %s, and I am %.lf :) - Woof!\n", my_dog->name
+, my_dog->age);
+	free_dog(my_dog);
+	return (0);
 }
