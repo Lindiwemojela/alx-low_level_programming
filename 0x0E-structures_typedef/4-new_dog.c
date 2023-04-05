@@ -1,17 +1,93 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "dog.h"
+#include <string.h>
 
 /**
- * main - Check the code
+ * strlen - Returns the length of a string
+ * @s: String to evaluate
  *
- * Return: Always 0 (Success)
+ * Return: The length of the string
  */
-int main(void)
-{
-	dog_t *my_dog;
 
-	my_dog = new_dog("Poppy", 3.5, "Bob");
-	printf("My name is %s, and I am %.lf :) - Woof!\n", my_dog->name
-, my_dog->age);
-	return (0);
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
+}
+
+/**
+ * _strcpy - Copies the string pointed to by src
+ * including the terminating null byte (\0) to the
+ * buffer pointed by dest
+ * @dest: Pointer to the buffer in which copies the string
+ * @src: String to be copied
+ *
+ * Return: The pointer to dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int len, i;
+
+	len = 0;
+
+	while (src[len] != '\0')
+	{
+		len++;
+	}
+
+	for (i = 0; i < len; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+
+	return (dest);
+
+}
+
+/**
+ * new_dog - Creates a new dog
+ * @name: Name of the dog
+ * @age: Age of the dog
+ * @owner: Owner of the dog
+ *
+ * Return: Pointer to the new dog (Success),
+ * NULL otherwise
+ */
+
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	dog_t *dog;
+	int len1, len2;
+
+	len1 = strlen(name);
+	len2 = strlen(owner);
+
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return (NULL);
+
+	dog->name = malloc(sizeof(char) * (len1 + 1));
+
+	if (dog->owner == NULL)
+	{
+		free(dog);
+		free(dog->name);
+		return (NULL);
+	}
+
+	_strcpy(dog->name, name);
+	_strcpy(dog->owner, owner);
+	dog->age = age;
+
+	return (dog);
 }
