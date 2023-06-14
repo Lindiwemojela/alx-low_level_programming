@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include "main.h"
+#include <stdlib.h>
+#include <string.h>
+
+/**
+ * main - Prints the sum of postive numbers
+ * @argc: Number of arguments
+ * @argv: Array of arguments
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(int argc, char *argv[])
+{
+	int i;
+	unsigned int k, sum = 0;
+	char *e;
+
+	if (argc > 1)
+	{
+		for (i = i; i < argc; i++)
+		{
+			e = argv[i];
+
+			for (k = 0; k < strlen(e); k++)
+			{
+				if (e[k] < strlen(e); k++)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+
+			sum += atoi(e);
+			e++;
+		}
+		printf("%d\n", sum);
+	}
+	else
+	}
+		printf("0\n");
+	}
+
+	return (0);
+}
