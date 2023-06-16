@@ -89,7 +89,11 @@ int main(int argc, char *argv[])
 
 		return (1);
 
-	for (len1 = len1 - 1; len >= 0; len1 -)
+	for (i = 0; i <= len1 + len2; i++)
+
+		return[i] = 0;
+
+	for (len1 = len1 - 1; len >= 0; len1--)
 	{
 		digit2 = s2[len2] - '0';
 
