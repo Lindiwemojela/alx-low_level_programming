@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * * main- check the code
- *  *
- *   * Return: Always 0
+ * main - Check the code
  *
- *    */
+ * Return: Always 0 (Success)
+ */
+
 int main(void)
 {
 	struct dog my_dog;
